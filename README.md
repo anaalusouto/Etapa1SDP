@@ -10,22 +10,19 @@ compartilhado protegido por lock, e provisionamento em nuvem (AWS EC2).
 pip install -r requirements.txt
 
 # 1. gerar o dataset de entrada (ajuste --n até o tempo sequencial ficar
-#    entre 60 e 90s na instância real — ver seção "Calibração" abaixo)
 python3 generate_dataset.py --n 600 --size 800x600
 
-# 2. rodar sequencial e paralelo separadamente (gera results_sequential.json
-#    e results_parallel.json)
+# 2. rodar sequencial e paralelo separadamente 
 python3 sequential.py
 python3 parallel.py --workers 8
 
-# 3. provar corretude: os hashes têm que bater
+# 3. provar corretude
 python3 verify.py
 
-# 4. provar estabilidade: rodar a paralela várias vezes seguidas
+# 4. provar estabilidade
 ./run_stability_check.sh 5 8
 
-# 5. benchmark completo: mede T_seq, T_par(n) para vários n, calcula
-#    speedup, estima p e compara com a lei de Amdahl, gera o gráfico
+# 5. benchmark completo
 python3 benchmark.py --workers-list 1,2
 ```
 
