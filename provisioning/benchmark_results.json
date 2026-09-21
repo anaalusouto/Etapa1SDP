@@ -1,0 +1,22 @@
+{
+  "t_seq_s": 70.85021938099999,
+  "n_images": 300,
+  "blur_passes": 150,
+  "p_estimated": 0.9763725380157531,
+  "rows": [
+    {
+      "workers": 1,
+      "time_s": 71.117500286,
+      "speedup_measured": 0.9962416999483231,
+      "speedup_amdahl_predicted": 1.0,
+      "gap": 0.003758300051676877
+    },
+    {
+      "workers": 2,
+      "time_s": 36.26211512300006,
+      "speedup_measured": 1.95383581847551,
+      "speedup_amdahl_predicted": 1.95383581847551,
+      "gap": 0.0
+    }
+  ]
+}
